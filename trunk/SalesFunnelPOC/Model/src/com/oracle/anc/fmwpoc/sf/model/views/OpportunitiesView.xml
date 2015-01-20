@@ -63,14 +63,14 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_cntName"
+    Name="LOV_CntName"
     ListVOName="LovModule_ContactsLovView1_1"
     ListRangeSize="-1"
     NullValueFlag="none"
-    NullValueId="LOV_cntName_LOVUIHints_NullValueId"
+    NullValueId="LOV_CntName_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="cntName"/>
+      <Item Value="CntName"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="CntName"/>
@@ -194,7 +194,7 @@ return LovModule_AccountsLovView1_1.findByKey(key,1)[0].getAttribute("AccName");
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="cntName"
+    Name="CntName"
     IsSelected="false"
     IsPersistent="false"
     PrecisionRule="true"
@@ -202,7 +202,7 @@ return LovModule_AccountsLovView1_1.findByKey(key,1)[0].getAttribute("AccName");
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"
-    LOVName="LOV_cntName">
+    LOVName="LOV_CntName">
     <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <TransientExpression><![CDATA[if(CntId==null) return null;
 oracle.jbo.Key key=new oracle.jbo.Key(CntId);
@@ -212,7 +212,7 @@ return LovModule_ContactsLovView1_1.findByKey(key,1)[0].getAttribute("CntName");
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesView.cntName_LABEL"/>
+          ResId="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesView.CntName_LABEL"/>
         <DISPLAYWIDTH
           Value="50"/>
         <CONTROLTYPE
