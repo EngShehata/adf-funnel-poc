@@ -23,9 +23,14 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  RowClass="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesViewRowImpl"
+  ComponentClass="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesViewImpl"
+  ComponentInterface="com.oracle.anc.fmwpoc.sf.model.views.common.OpportunitiesView"
+  ClientProxyName="com.oracle.anc.fmwpoc.sf.model.views.client.OpportunitiesViewClient">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="LovModule_AccountsLovView1_1"
@@ -224,4 +229,11 @@ return LovModule_ContactsLovView1_1.findByKey(key,1)[0].getAttribute("CntName");
     <PropertiesBundle
       PropertiesFile="com.oracle.anc.fmwpoc.sf.model.ModelBundle"/>
   </ResourceBundle>
+  <ClientInterface>
+    <Method
+      Name="refreshAccountsLOV">
+      <Return
+        Type="void"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>
