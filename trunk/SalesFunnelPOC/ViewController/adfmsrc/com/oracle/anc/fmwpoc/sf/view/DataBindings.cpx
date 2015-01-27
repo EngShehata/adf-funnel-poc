@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="com.oracle.anc.fmwpoc.sf.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/main.jspx"
+          usageId="com_oracle_anc_fmwpoc_sf_view_mainPageDef"/>
+    <page path="/lead/leadEdit.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_leadEditPageDef"/>
+    <page path="/account/accEdit.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_accEditPageDef"/>
+    <page path="/WEB-INF/account-create-btf.xml#account-create-btf@CreateInsert"
+          usageId="com_oracle_anc_fmwpoc_sf_view_account_create_btf_account_create_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/lead-edit-btf.xml#lead-edit-btf@refreshAccountsLOV"
+          usageId="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshAccountsLOVPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.mainPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_leadEditPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.leadEditPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_accEditPageDef"
+          path="account.accEditPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_account_create_btf_account_create_btf_CreateInsertPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.account_create_btf_account_create_btf_CreateInsertPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshAccountsLOVPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_edit_btf_lead_edit_btf_refreshAccountsLOVPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="SalesFunnelModuleDataControl"
+                     Package="com.oracle.anc.fmwpoc.sf.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="SalesFunnelModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

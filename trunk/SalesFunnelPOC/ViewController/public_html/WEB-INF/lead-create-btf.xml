@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="lead-create-btf">
+    <template-reference>
+      <document id="__2">/WEB-INF/templates/sf-btf-template.xml</document>
+      <id id="__1">sf-btf-template</id>
+    </template-reference>
+    <default-activity id="__3">createInsert</default-activity>
+    <transaction id="__20">
+      <new-transaction/>
+    </transaction>
+    <data-control-scope id="__19">
+      <shared/>
+    </data-control-scope>
+    <view id="createInsert"></view>
+    <task-flow-call id="lead-edit-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/lead-edit-btf.xml</document>
+        <id>lead-edit-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-return id="leadCreateCommit">
+      <outcome id="__9">
+        <name>leadCreateCommit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="leadCreateRollback">
+      <outcome id="__10">
+        <name>leadCreateRollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__4">
+      <from-activity-id id="__5">createInsert</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__8">createInsert</from-outcome>
+        <to-activity-id id="__7">lead-edit-btf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id id="__12">lead-edit-btf</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome id="__14">leadEditCommit</from-outcome>
+        <to-activity-id id="__13">leadCreateCommit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome id="__16">leadEditRollback</from-outcome>
+        <to-activity-id id="__18">leadCreateRollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
