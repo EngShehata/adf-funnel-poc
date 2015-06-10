@@ -1,0 +1,1 @@
+It's a poc to build a complete sales application using ADF to show the power of ADF and learn how to use it
